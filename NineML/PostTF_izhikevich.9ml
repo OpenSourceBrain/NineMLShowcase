@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<NineML xmlns="http://nineml.org/9ML/0.2"
-    xmlns:comodl="CoMoDL"
+<NineML xmlns="http://nineml.org/9ML/0.3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://nineml.org/9ML/0.2 NineML_v0.2.xsd">
+    xsi:schemaLocation="http://nineml.org/9ML/0.3 ../Schemas/NineML/NineML_v0.3.xsd">
 
-  <ComponentClass xmlns="CoMoDL" name="izhikevichCell">
+  <ComponentClass name="izhikevichCell">
 
     <Parameter name="a" dimension='none'/>
     <Parameter name="c" dimension='none'/>
@@ -56,6 +55,12 @@
           </OnCondition>
 
         </Regime>
+        <!--
+              <Alias name="q10">
+        <MathInline>3.0**((celsius - 6.3)/10.0)</MathInline>
+      </Alias>-->
+      
+      
     </Dynamics>
 
   </ComponentClass>
