@@ -4,8 +4,8 @@
         Test XSD for NineML v0.3
 -->
 
-<xs:schema targetNamespace="http://nineml.org/9ML/0.3"
-    xmlns="http://nineml.org/9ML/0.3"
+<xs:schema targetNamespace="http://nineml.incf.org/9ML/0.3"
+    xmlns="http://nineml.incf.org/9ML/0.3"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified">
@@ -84,8 +84,17 @@
     <xs:complexType name="Dynamics">
         <xs:sequence>
             <xs:element name="StateVariable" type="NamedDimensionalType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Alias" type="Alias" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Regime" type="Regime" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Alias">
+        <xs:sequence>
+            <xs:element name="MathInline" type="Math" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="argument" type="xs:string" use="required"/>
     </xs:complexType>
 
 
